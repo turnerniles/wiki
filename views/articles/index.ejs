@@ -1,0 +1,23 @@
+<link rel='stylesheet' href='/stylesheets/articlesindex.css'>
+
+<h1> Super Wiki </h1>
+<button id = "newArticle"> New Article </button>
+
+<div id='Container' class = 'container' >
+<% articles.forEach(function (article, i){ %>
+
+<div class = "mix">
+
+<form class = "delete" action='/articles/<%=article._id%>?_method=DELETE', method = 'post'>
+<input type='submit' value='x'>
+</form>
+
+<h2><%= article.title %>
+<p>by <%= article.author %></p>
+<p><%=article.content.slice(0,50)%> </p> <a href = '/articles/<%=article._id%>'>...</a>
+</div>
+<% }) %>
+</div>
+
+<script src='http://cdn.jsdelivr.net/jquery.mixitup/2.0.0/jquery.mixitup.min.js'></script>
+<script src="scripts/articlesindex.js"></script>

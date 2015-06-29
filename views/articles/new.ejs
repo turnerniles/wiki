@@ -1,0 +1,15 @@
+<form id = 'form' action="/articles/new" method="post">
+
+  <label>Title</label>
+    <input type="text" name='article[title]' placeholder="Title">
+  <label>Author</label>
+    <input type="text" name='article[author]' placeholder="Author">
+  <label>Content</label>
+
+  <textarea form = "form" cols="50" rows="4"
+            name='article[content]' placeholder="Content">
+  </textarea>
+
+    <input type="submit" value="Submit a new Post">
+
+</form>
