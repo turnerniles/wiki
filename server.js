@@ -5,7 +5,8 @@ var express =        require('express'),
     methodOverride = require('method-override'),
     expressLayouts = require('express-ejs-layouts'),
     morgan =         require('morgan'),
-    mongoose =       require('mongoose');
+    mongoose =       require('mongoose'),
+    session =        require('express-session');
 
 //Set the view engine
 server.set('views', './views');
@@ -14,12 +15,23 @@ server.set('view engine', 'ejs');
 //Use morgan for error messages
 server.use(morgan('short'));
 
+//Use ./public for static css and js files
 server.use(express.static("./public"));
 
+//Use expressLayouts, body-parser and methodOverride
 server.use(expressLayouts);
-
 server.use(bodyParser.urlencoded({ extended: true }));
 server.use(methodOverride('_method'));
+
+//Use Sessions
+
+server.use(session({
+
+  secret: "crisscross",
+  resave: true,
+  saveUninitialized: false
+
+}))
 
 //ROUTES
 

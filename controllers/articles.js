@@ -7,11 +7,19 @@ var express = require('express'),
 
 // INDEX
 router.get('/', function (req, res) {
+
+  console.log(req.session.currentUser);
+
+
   Article.find({}, function (err, articlesArray) {
     if (err) {
       console.log(err);
     } else {
-      res.render('articles/index.ejs', { articles: articlesArray });
+      res.render('articles/index.ejs',
+      { articles: articlesArray,
+        currentUser: req.session.currentUser }
+        
+      );
     };
   });
 });

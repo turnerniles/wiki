@@ -25,6 +25,34 @@ res.redirect(301, '/articles');
   })
 })
 
+router.get('/login', function (req, res){
+
+  res.render('users/login')
+})
+
+router.post('/login', function (req, res){
+
+  var attempt = req.body.user;
+
+  User.findOne({username: attempt.username }, function (err, user){
+
+if (user && user.password === attempt.password) {
+  req.session.currentUser = user.username;
+
+  res.redirect(301, "/articles");
+} else {
+  res.redirect(301, "/users/new")
+}
+  })
+})
+
+router.get('/:id', function (req,res){
+
+
+console.log(user)
+
+
+})
 
 //export router object
 module.exports = router;
