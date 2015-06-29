@@ -41,7 +41,8 @@ if (user && user.password === attempt.password) {
 
   res.redirect(301, "/articles");
 } else {
-  res.redirect(301, "/users/new")
+
+  res.render("users/login", {})
 }
   })
 })

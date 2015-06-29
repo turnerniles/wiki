@@ -1,26 +1,23 @@
 var express = require('express'),
     router = express.Router(),
     Article = require('../models/article.js').Article;
-    // Section = require('../models/article.js').Section;
-
 // remember, every route has /articles before it in here...
 
 // INDEX
-router.get('/', function (req, res) {
-
+router.get('/', function (req, res){
   console.log(req.session.currentUser);
-
-
   Article.find({}, function (err, articlesArray) {
     if (err) {
       console.log(err);
+      // to do: maybe redirect on error, too?
+    } else if (req.session.currentUser)  {
+      res.render('articles/index.ejs', {
+                  articles: articlesArray,
+                  currentUser: req.session.currentUser
+      })
     } else {
-      res.render('articles/index.ejs',
-      { articles: articlesArray,
-        currentUser: req.session.currentUser }
-        
-      );
-    };
+      res.redirect(301, '/users/login')
+    }
   });
 });
 
@@ -81,17 +78,16 @@ Article.findOne({_id: id}, function(err,result){
 // UPDATE
 router.patch('/:id', function (req, res) {
 
-
 var id = req.params.id;
-var updateArticle = new Article(req.body.article);
+var updateArticle = req.body.article;
 
-Article.findOne({_id: id}, function(err, result){
-if (err){console.log(err)};
-Article.update({result: updateArticle}, function(err,result){
+console.log(id);
+console.log(updateArticle);
+
+Article.update({_id: id}, updateArticle, function(err,result){
 if (err){console.log(err)};
 res.redirect(301, '/articles');
     });
   });
-});
 
 module.exports = router;

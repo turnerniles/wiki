@@ -31,7 +31,8 @@ server.use(session({
   resave: true,
   saveUninitialized: false
 
-}))
+}));
+
 
 //ROUTES
 
@@ -40,7 +41,7 @@ var articleController = require('./controllers/articles.js');
 server.use('/articles', articleController);
 
 server.get('/', function (req, res) {
-  res.render('index');
+  res.render('users/login');
 });
 
 // in the controlles/users.js we put all the users routes
@@ -57,7 +58,8 @@ db.on('error', function () {
 db.once('open', function () {
   console.log("Database Running");
 
-  server.listen(1337, function () {
-    console.log("1337 Server");
+server.listen(1337, function () {
+  console.log("1337 Server");
+
   });
 });

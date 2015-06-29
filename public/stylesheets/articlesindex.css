@@ -1,11 +1,23 @@
 @import url(http://fonts.googleapis.com/css?family=Pacifico);
 
+#username {
+  position: relative;
+  top: 0;
+  left: 0;
+  font-family: Pacifico;
+  text-align: left;
+  margin: 0;
+  padding: .1em;
+  font-size: 20px;
+}
+
 h2 {
   margin: 0;
 }
 
 h1 {
   font-family: Pacifico;
+  margin: 0;
 }
 
 body{

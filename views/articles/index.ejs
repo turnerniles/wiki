@@ -1,7 +1,7 @@
 <link rel='stylesheet' href='/stylesheets/articlesindex.css'>
 
-<h1 id = 'username'> Welcome <%= currentUser.charAt(0).toUpperCase() + currentUser.substring(1) %> </h1>
-<h1> to the Super Wiki </h1>
+<p id = 'username'> Welcome <%= currentUser.charAt(0).toUpperCase() + currentUser.substring(1) %> </p>
+<h1> Super Wiki </h1>
 <button id = "newArticle"> New Article </button>
 
 <div id='Container' class = 'container' >
@@ -13,6 +13,8 @@
 <input type='submit' value='x'>
 </form>
 
+<img data-title="<%= article.title %>">
+
 <h2><%= article.title %>
 <p>by <%= article.author %></p>
 <p><%=article.content.slice(0,50)%> </p> <a href = '/articles/<%=article._id%>'>...</a>
@@ -22,3 +24,24 @@
 
 <script src='http://cdn.jsdelivr.net/jquery.mixitup/2.0.0/jquery.mixitup.min.js'></script>
 <script src="scripts/articlesindex.js"></script>
+<script>
+  $(function () {
+    $('img').each(function (index, image) {
+      var $image = $(image);
+      var apiUrl = "http://api.pixplorer.co.uk/getimage/" + $image.data('title');
+
+console.log(apiUrl);
+
+      var updateImage = function (apiData) {
+        $image.attr('src', apiData.imglink);
+      };
+
+      $.ajax({
+        url: apiUrl,
+        jsonp: 'jsonp',
+        dataType: 'jsonp',
+        success: updateImage
+      })
+    })
+  });
+</script>
