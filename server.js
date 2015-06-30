@@ -8,6 +8,12 @@ var express =        require('express'),
     mongoose =       require('mongoose'),
     session =        require('express-session');
 
+// this sets is to the process PORT
+// if it's defined, otherwise it will default to 3000.
+
+var PORT = process.env.PORT || 1337;
+var MONGOURI = mongodb://heroku_hr1z6xsn:k124m1pb6l04a8ku6v8hidr5h8@ds063180.mongolab.com:63180/heroku_hr1z6
+
 //Set the view engine
 server.set('views', './views');
 server.set('view engine', 'ejs');
@@ -54,7 +60,8 @@ server.get('/', function (req, res) {
 var userController = require('./controllers/users.js');
 server.use('/users', userController);
 
-mongoose.connect('mongodb://localhost:27017/wiki');
+// mongoose.connect('mongodb://localhost:27017/wiki');
+mongoose.connect(MONOGURI);
 var db = mongoose.connection;
 
 db.on('error', function () {
@@ -62,10 +69,11 @@ db.on('error', function () {
 });
 
 db.once('open', function () {
-  console.log("Database Running");
+  server.listen(PORT, function() {)
+  console.log("Database Running"});
 
-server.listen(1337, function () {
-  console.log("1337 Server");
-
-  });
+// server.listen(1337, function () {
+//   console.log("1337 Server");
+//
+//   });
 });

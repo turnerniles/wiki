@@ -1,5 +1,6 @@
 <h1> Wiki Demo </h1>
 
+<div id = 'loginContainer'>
 <% if (referer === 'http://localhost:1337/') { %>
 
 <h2 id='loginError'> Wrong User Name or Password </h2>
@@ -12,13 +13,16 @@
         name = 'user[username]'
         placeholder= "user name"
         autofocus="true"
-        class = 'login'>
+        class = 'textbox'>
 <input  type = 'password'
         name = 'user[password]'
         placeholder= "password"
-        class = 'login'>
+        class = 'textbox'>
+
+<div class = 'loginSignup'>
 <input type='submit' value = "Login" class = "subSign">
+<a class = "subSign" href = '/users/new'> Sign up </a>
+</div>
 
 </form>
-
-<a class = "subSign" href = '/users/new'> Sign up </a>
+</div>
