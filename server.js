@@ -69,8 +69,10 @@ db.on('error', function () {
 });
 
 db.once('open', function () {
-  server.listen(PORT, function() {)
-  console.log("Database Running"});
+  server.listen(PORT, function() {
+  console.log("Database Running"
+  });
+});
 
 // server.listen(1337, function () {
 //   console.log("1337 Server");
