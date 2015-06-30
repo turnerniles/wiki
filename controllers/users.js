@@ -53,7 +53,7 @@ if (user && user.password === attempt.password) {
 router.get('/logout', function (req,res){
 
 req.session.currentUser = null;
-
+res.redirect(301,'/')
 
 console.log(user)
 
