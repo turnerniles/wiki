@@ -41,7 +41,13 @@ var articleController = require('./controllers/articles.js');
 server.use('/articles', articleController);
 
 server.get('/', function (req, res) {
-  res.render('users/login');
+  console.log(req.headers.referer);
+
+  res.render('users/login', {
+
+    referer: req.headers.referer
+
+  });
 });
 
 // in the controlles/users.js we put all the users routes

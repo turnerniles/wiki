@@ -26,7 +26,7 @@ res.redirect(301, '/articles');
 })
 
 router.get('/login', function (req, res){
-
+  console.log(req.headers.referer);
   res.render('users/login')
 })
 
@@ -42,7 +42,7 @@ if (user && user.password === attempt.password) {
   res.redirect(301, "/articles");
 } else {
 
-  res.render("users/login", {})
+  res.redirect(301, "/")
 }
   })
 })

@@ -1,0 +1,86 @@
+@import url(http://fonts.googleapis.com/css?family=Pacifico);
+@import url(http://fonts.googleapis.com/css?family=Arimo);
+
+* {
+  font-family: Arimo;
+  box-sizing: border-box;
+}
+
+
+h1 {
+  font-size: 32;
+  font-family: Pacifico;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+#loginForm {
+  text-align: center;
+}
+
+.login {
+
+  padding: 10px;
+  margin-bottom: 10px;
+  width: 25%;
+  font-size: 18px;
+  appearance: none;
+  box-shadow: none;
+  border-radius: none;
+  border: solid 5px #c9c9c9;
+  transition: box-shadow 0.3s, border 0.3s;
+  line-height: 1;
+}
+
+input::-webkit-input-placeholder {
+  font-size: 18px;
+  font-family: Arimo;
+}
+
+.login:focus {
+  outline: none;
+  border: solid 5px #969696;
+  box-shadow: 0 0 5px 1px #969696;
+}
+
+#loginError {
+
+  text-align: center;
+  color: #FF0066;
+  margin-top: .1em;
+  margin-bottom: .1em;
+  font: Arimo
+
+}
+
+.subSign {
+
+  display: block;
+  margin: 0 10px 0 0;
+  padding: 15px 45px;
+  font-size: 18px;
+  line-height: 1;
+  border: solid 5px #588B50;
+  appearance: none;
+  box-shadow: none;
+  border-radius: none;
+  width: 25%;
+  text-decoration:none;
+  color: #588B50;
+  text-align: center;
+
+}
+
+.subSign:hover {
+  border-color: #26591E;
+  color: #26591E;
+  cursor: pointer;
+}
+
+.subSign:focus {
+outline: none;
+border-color: #13400C;
+ color: #13400C;
+
+}

@@ -1,13 +1,24 @@
-<h1> Please log in the Wiki </h1>
-<form action = '/users/login' method = 'post'>
+<h1> Wiki Demo </h1>
+
+<% if (referer === 'http://localhost:1337/') { %>
+
+<h2 id='loginError'> Wrong User Name or Password </h2>
+
+<% } %>
+
+<form id="loginForm" action = '/users/login' method = 'post'>
 
 <input  type = 'text'
         name = 'user[username]'
         placeholder= "user name"
-        autofocus="true">
+        autofocus="true"
+        class = 'login'>
 <input  type = 'password'
         name = 'user[password]'
-        placeholder= "password">
-<input type='submit' value = "Login">
+        placeholder= "password"
+        class = 'login'>
+<input type='submit' value = "Login" class = "subSign">
 
 </form>
+
+<a class = "subSign" href = '/users/new'> Sign up </a>

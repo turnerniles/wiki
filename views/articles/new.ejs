@@ -1,9 +1,9 @@
 <form id = 'form' action="/articles/new" method="post">
 
   <label>Title</label>
-    <input type="text" name='article[title]' placeholder="Title">
+    <input type="text" name='article[title]' placeholder="Title" >
   <label>Author</label>
-    <input type="text" name='article[author]' placeholder="Author">
+    <input type="text" name='article[author]' value = <%=currentUser.charAt(0).toUpperCase() + currentUser.substring(1)%> >
   <label>Content</label>
 
   <textarea form = "form" cols="50" rows="4"
