@@ -61,21 +61,24 @@ var userController = require('./controllers/users.js');
 server.use('/users', userController);
 
 // mongoose.connect('mongodb://localhost:27017/wiki');
-mongoose.connect(MONOGURI);
+mongoose.connect(MONGOURI);
 var db = mongoose.connection;
 
 db.on('error', function () {
   console.log("Database errors!");
 });
 
-db.once('open', function () {
+db.once('open', function() {
+
   server.listen(PORT, function() {
-  console.log("Database Running"
-); })
+
+  console.log("Database Running");
+
+  });
 });
 
 // server.listen(1337, function () {
 //   console.log("1337 Server");
 //
 //   });
-});
+// });
