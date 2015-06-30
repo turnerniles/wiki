@@ -20,6 +20,7 @@ router.post('/', function(req, res){
       console.log(err);
               }
     else {
+req.session.currentUser = result.username;
 res.redirect(301, '/articles');
     }
   })
@@ -45,6 +46,17 @@ if (user && user.password === attempt.password) {
   res.redirect(301, "/")
 }
   })
+})
+
+//LOGOUT
+
+router.get('/logout', function (req,res){
+
+req.session.currentUser = null;
+
+
+console.log(user)
+
 })
 
 router.get('/:id', function (req,res){

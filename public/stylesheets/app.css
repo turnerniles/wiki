@@ -1,30 +1,50 @@
-@import url(https://fonts.googleapis.com/css?family=Pacifico);
-@import url(https://fonts.googleapis.com/css?family=Arimo);
+@import url(http://fonts.googleapis.com/css?family=Arimo|Pacifico);
 
 * {
-  font-family: Arimo;
+  font-family: Arimo, sans-serif;;
   box-sizing: border-box;
 }
 
 
 h1 {
   font-size: 32;
-  font-family: Pacifico;
+  font-family: Pacifico, cursive;;
   margin: 0;
   padding: 0;
   text-align: center;
 }
 
-#loginContainer {
+.hideMe {
+  visibility: hidden;
+}
 
+
+#h1Article {
+
+position: absolute;
+left: 88px;
+
+}
+
+#loginContainer {
 position: absolute;
 width: 100%;
 height: 80%;
 text-align: center;
 }
 
-.loginSignup {
+#newPostContainer {
+position: relative;
+top: 50px;
+}
 
+.newSubmitContainer {
+position: relative;
+margin-left: auto;
+margin-right: auto;
+}
+
+.loginSignup {
 position: relative;
 margin-left: auto;
 margin-right: auto;
@@ -46,6 +66,7 @@ margin-right: auto;
 input.textbox::-webkit-input-placeholder {
   font-size: 18px;
   font-family: Arimo;
+  text-align: center;
 }
 
 .textbox:focus {
@@ -54,52 +75,106 @@ input.textbox::-webkit-input-placeholder {
   box-shadow: 0 0 5px 1px #969696;
 }
 
+.articleTextbox {
+  position: relative;
+  padding: 10px;
+  margin-top: 10px;
+  width: 14em;
+  font-size: 18px;
+  appearance: none;
+  box-shadow: none;
+  border-radius: none;
+  border: solid 5px #c9c9c9;
+  transition: box-shadow 0.3s, border 0.3s;
+  line-height: 1;
+}
+
+#at1 {
+left: 40px;
+}
+
+#at2 {
+left: 23px;
+}
+
+#at3 {
+left: 14px;
+}
+
+#at4 {
+text-align: center;
+position: absolute;
+left: 79px;
+}
+
+#at5 {
+position: absolute;
+left: 210px;
+padding: 15px;
+}
+
+input.articleTextbox::-webkit-input-placeholder {
+  font-size: 18px;
+  font-family: Arimo;
+}
+
+.articleTextbox:focus {
+  outline: none;
+  border: solid 5px #969696;
+  box-shadow: 0 0 5px 1px #969696;
+}
+
+label textarea{
+ vertical-align: middle;
+}
+
 #loginError {
 
   text-align: center;
   color: #FF0066;
   font: Arimo;
   margin: 0;
-  padding 0;
+  padding: 0;
 
 }
 
-.subSign {
-  display: block;
-  margin: 0 10px 0 0;
-  padding: 15px 45px;
+.mainButtons {
   font-size: 18px;
-  line-height: 1;
+  line-height: .65;
   border: solid 5px #588B50;
   appearance: none;
   box-shadow: none;
+  width: 6.7em;
   border-radius: none;
-  width: 25%;
   text-decoration:none;
-  color: #588B50;
-  text-align: center;
+  color: #26591E;
   margin-top: 10px;
+  background: #7EAB77;
+  padding: 15px;
 }
 
-.subSign:nth-child(1) {
+#mainButton1 {
   position: absolute;
-  left: 23%;
+  left: calc(25% - 2px);
+  width: 25%;
 }
 
-.subSign:nth-child(2) {
+#mainButton2 {
   position: absolute;
-  left: 51%;
+  left: calc(50% + 2px);
+  width: 25%;
 }
 
-.subSign:hover {
+.mainButtons:hover {
   border-color: #26591E;
   color: #26591E;
   cursor: pointer;
 }
 
-.subSign:focus {
+.mainButtons:focus {
 outline: none;
 border-color: #13400C;
- color: #13400C;
+color: #13400C;
+background: #588B50;
 
 }

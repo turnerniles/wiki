@@ -1,15 +1,25 @@
+<h1 id = "h1Article"> New Post </h1>
+<div id='newPostContainer'>
 <form id = 'form' action="/articles/new" method="post">
-
-  <label>Title</label>
-    <input type="text" class = "textbox" name='article[title]' placeholder="Title" >
-  <label>Author</label>
-    <input type="text" class = "textbox" name='article[author]' value = <%=currentUser.charAt(0).toUpperCase() + currentUser.substring(1)%> >
-  <label>Content</label>
-
-  <textarea form = "form" cols="50" rows="4"
-            name='article[content]' placeholder="Content">
-  </textarea>
-
-    <input type="submit" value="Submit a new Post">
-
+  <label>Title:</label>
+    <input id = "at1" class = "articleTextbox" type="text" name='article[title]' placeholder="Title">
+  </br>
+  <label>Author:</label>
+    <input id = "at2" class = "articleTextbox"  type="text" name='article[author]'
+    value = <%=currentUser.charAt(0).toUpperCase() + currentUser.substring(1)%> readonly >
+  </br>
+  <label>Category:</label>
+    <input id = "at2" class = "articleTextbox" type="text" name='article[title]' placeholder="Title">
+  </br>
+  <label>Content:
+  <textarea id = "at3"
+            class = "articleTextbox" form = cols="50" rows="4"
+            placeholder = "Content"
+            name = 'article[content]'></textarea>
+</label>
+    <div class = "newSubmitContainer">
+    <a class="mainButtons" id = "at4"  href = '/articles'>Back</a>
+    <input class="mainButtons" id = "at5"  type="submit" value="Submit">
+    </div>
 </form>
+</div>

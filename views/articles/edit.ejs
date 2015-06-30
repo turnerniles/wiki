@@ -1,16 +1,24 @@
-<form id="form" action='/articles/<%=article._id%>?_method=PATCH' method="post">
-
-  <label>Title</label>
-    <input type="text" name='article[title]' value = <%=article.title%> >
-  <label>Author</label>
-    <input type="text" name='article[author]' value= <%=article.author%> >
-  <label>Content</label>
-    <textarea form = "form" cols="50" rows="4"
-              name='article[content]'> <%=article.content%>
-    </textarea>
-
-    <input type="submit" value="Submit Changes">
-
-</form>
-
-<form action= method='post'>
+<h1 id = "h1Article"> New Post </h1>
+  <div id='newPostContainer'>
+  <form id = 'form' action='/articles/<%=article._id%>?_method=PATCH' method="post">
+    <label>Title:</label>
+      <input id = "at1" class = "articleTextbox" type="text" name='article[title]' value ='<%=article.title%>' >
+    </br>
+    <label>Author:</label>
+      <input id = "at2" class = "articleTextbox"  type="text" name='article[author]' value='<%=article.author%>' >
+    </br>
+    <label>Category:</label>
+      <input id = "at2" class = "articleTextbox"  type="text" name='article[category]' value='<%=article.category%>' >
+    </br>
+    <label>Content:
+    <textarea id = "at3"
+              class = "articleTextbox" form = cols="50" rows="4"
+              placeholder = "Content"
+              name = 'article[content]'><%=article.content%></textarea>
+  </label>
+      <div class = "newSubmitContainer">
+      <a class="mainButtons" id = "at4"  href = '/articles'>Back</a>
+      <input class="mainButtons" id = "at5"  type="submit" value="Submit">
+      </div>
+  </form>
+  </div>

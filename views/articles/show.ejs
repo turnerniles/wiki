@@ -1,8 +1,13 @@
 <div class = "mix">
-<h2><%= article.title %>
-<p>by <%= article.author %></p>
-<p><%= article.content %></p>
-<a href = '/articles/edit/<%=article._id %>'>Edit</a>
-<a href = '/articles'>Back</a>
+<label>Title:</label>
+<h2 class = "articleTextbox"><%=article.title %> </h2>
+<label>Author:</label>
+<p class = "articleTextbox"><%=article.author %></p>
+<label>Category:</label>
+<p class = "articleTextbox"><%=article.category %></p>
+<label>Content:</label>
+<p class = "showTextbox" ><%=article.content %></p>
+<a class="mainButtons" href = '/articles/edit/<%=article._id %>'>Edit</a>
+<a class="mainButtons" href = '/articles'>Back</a>
 </div>
 </div>

@@ -1,14 +1,22 @@
-<h1> Sign up for the site! </h1>
+<h1> Sign up! </h1>
+
+<h2 id='loginError'> Use a fake username and password </h2>
+
+<div id = 'loginContainer'>
 <form action = '/users' method = 'post'>
 
 <input  type = 'text'
         name = 'user[username]'
-        placeholder= "user name">
+        placeholder= "username"
+        class = "textbox">
 <input  type = 'password'
         name = 'user[password]'
-        placeholder= "password">
-<input type='submit' value = "Sign Up">
+        placeholder= "password"
+        class = "textbox">
 
+<div class = 'loginSignup'>
+<input id = "mainButton1" class = 'mainButtons' type='submit' value = "sign up">
+<a id = "mainButton2" class = 'mainButtons' href = '/'> back to login </a>
+</div>
 </form>
-
-<a href = '/'> Back to Login </a>
+</div>

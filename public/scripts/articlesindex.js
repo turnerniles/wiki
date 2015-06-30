@@ -14,7 +14,6 @@ $(function(){
 $(function() {
 
   $(".container").mixItUp();
-
   var inputText;
   var $matching = $();
 
@@ -38,7 +37,7 @@ $(function() {
           $this = $("this");
 
            // add item to be filtered out if input text matches items inside the title
-           if($(this).children('.title').text().toLowerCase().match(inputText)) {
+           if($(this).children('.category').text().toLowerCase().match(inputText)) {
             $matching = $matching.add(this);
           }
           else {

@@ -2,9 +2,10 @@ var mongoose = require('mongoose'),
     Schema =   mongoose.Schema;
 
 var articleSchema = Schema({
-  title: {type: String},
-  author: {type: String},
-  content: {type: String}
+  title: {type: String, required: true, unique: true},
+  author: {type: String, required: true},
+  category: {type: String, required: true},
+  content: {type: String, required: true}
 });
 
 // var Section = mongoose.model("Section", sectionSchema);

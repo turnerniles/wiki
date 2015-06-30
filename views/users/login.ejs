@@ -3,15 +3,15 @@
 <div id = 'loginContainer'>
 <% if (referer === 'http://localhost:1337/') { %>
 
-<h2 id='loginError'> Wrong User Name or Password </h2>
+<h2 id='loginError'> Wrong username or password </h2>
 
 <% } %>
 
-<form id="loginForm" action = '/users/login' method = 'post'>
+<form action = '/users/login' method = 'post'>
 
 <input  type = 'text'
         name = 'user[username]'
-        placeholder= "user name"
+        placeholder= "username"
         autofocus="true"
         class = 'textbox'>
 <input  type = 'password'
@@ -20,8 +20,8 @@
         class = 'textbox'>
 
 <div class = 'loginSignup'>
-<input type='submit' value = "Login" class = "subSign">
-<a class = "subSign" href = '/users/new'> Sign up </a>
+<input id = "mainButton1" class = 'mainButtons' type='submit' value = "Login">
+<a id = "mainButton2" class = 'mainButtons' href = '/users/new'> Sign up </a>
 </div>
 
 </form>

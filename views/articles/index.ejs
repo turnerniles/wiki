@@ -1,12 +1,16 @@
 <link rel='stylesheet' href='/stylesheets/articlesindex.css'>
 
 <p id = 'username'> Welcome <%= currentUser.charAt(0).toUpperCase() + currentUser.substring(1) %> </p>
-<h1> Super Wiki </h1>
-<button id = "newArticle"> New Article </button>
+<a id = 'logout' href = "/users/logout"> Logout</a>
+<h1> Demo Wiki </h1>
+
+<div id = "sortContainer">
+<button id = "newArticle" class = "sort"> New Article </button>
 <button class="sort" data-sort="random">Shuffle</button>
 <!-- <button class="filter" data-filter=".category-1">Filter Out</button>
 <button class="filter" data-filter="all">Filter In</button> -->
-<input type="text" id="input" placeholder="Search Titles">
+<input class = "sort" type="text" id="input" placeholder="Search by Category">
+</div>
 
 <div id='Container' class = 'container' >
 <% articles.forEach(function (article, i){ %>
@@ -16,7 +20,8 @@
 </form>
 <h2 class = 'title'><%= article.title %> </h2>
 <p>by <%= article.author %></p>
-<p><%=article.content.slice(0,200)%> </p> <a href = '/articles/<%=article._id%>'>...</a>
+<p class = 'category hideMe'> <%= article.category %></p>
+<p><%=article.content.slice(0,200)%><a href = '/articles/<%=article._id%>'>...</a> </p>
 </div>
 <% }) %>
 </div>
