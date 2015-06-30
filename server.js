@@ -12,7 +12,7 @@ var express =        require('express'),
 // if it's defined, otherwise it will default to 3000.
 
 var PORT = process.env.PORT || 1337;
-var MONGOURI = mongodb://heroku_hr1z6xsn:k124m1pb6l04a8ku6v8hidr5h8@ds063180.mongolab.com:63180/heroku_hr1z6
+var MONGOURI = process.env.MONGOLAB_URI || 'mongodb://localhost:27017/wiki';
 
 //Set the view engine
 server.set('views', './views');
