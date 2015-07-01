@@ -84,6 +84,17 @@ input.textbox::-webkit-input-placeholder {
   line-height: 1;
 }
 
+input.articleTextbox::-webkit-input-placeholder {
+  font-size: 18px;
+  font-family: Arimo;
+}
+
+.articleTextbox:focus {
+  outline: none;
+  border: solid 5px #969696;
+  box-shadow: 0 0 5px 1px #969696;
+}
+
 #at1 {
 left: 40px;
 }
@@ -112,15 +123,48 @@ left: 210px;
 padding: 15px;
 }
 
-input.articleTextbox::-webkit-input-placeholder {
-  font-size: 18px;
-  font-family: Arimo;
+#show1 {
+display: inline-block;
+left: 40px;
 }
 
-.articleTextbox:focus {
-  outline: none;
-  border: solid 5px #969696;
-  box-shadow: 0 0 5px 1px #969696;
+#show2 {
+display: inline-block;
+left: 23px;
+}
+
+#show3 {
+display: inline-block;
+left: 6px;
+}
+
+#show4 {
+display: inline-block;
+position: absolute;
+left: 80px;
+border: solid 5px #c9c9c9;
+width: 75%;
+}
+
+
+#showContentLabel {
+position: relative;
+vertical-align: top;
+}
+
+#show5 {
+text-align: center;
+position: absolute;
+left: 79px;
+width: 7em;
+margin-top: 8em;
+}
+
+#show6 {
+position: absolute;
+left: 210px;
+width: 7em;
+margin-top: 8em;
 }
 
 label textarea{

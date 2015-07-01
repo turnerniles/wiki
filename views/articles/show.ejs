@@ -1,13 +1,17 @@
-<div class = "mix">
+<h1 id = "h1Article"> <%=article.title %> </h1>
+<div id='newPostContainer'>
 <label>Title:</label>
-<h2 class = "articleTextbox"><%=article.title %> </h2>
+<h2 id = "show1" class = "articleTextbox"><%=article.title %> </h2>
+</br>
 <label>Author:</label>
-<p class = "articleTextbox"><%=article.author %></p>
+<p id = "show2" class = "articleTextbox"><%=article.author %></p>
+</br>
 <label>Category:</label>
-<p class = "articleTextbox"><%=article.category %></p>
-<label>Content:</label>
-<p class = "showTextbox" ><%=article.content %></p>
-<a class="mainButtons" href = '/articles/edit/<%=article._id %>'>Edit</a>
-<a class="mainButtons" href = '/articles'>Back</a>
-</div>
+<p id = "show3" class = "articleTextbox"><%=article.category %></p>
+</br>
+<label id='showContentLabel'>Content:</label>
+<p id = "show4" class = "showTextbox" ><%=article.content %></p>
+</br>
+<a id = "show5"class="mainButtons" href = '/articles/edit/<%=article._id %>'>Edit</a>
+<a id = "show6" class="mainButtons" href = '/articles'>Back</a>
 </div>
