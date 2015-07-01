@@ -1,4 +1,3 @@
-<script src="scripts/image.js"></script>
 <link rel='stylesheet' href='/stylesheets/articlesindex.css'>
 
 <p id = 'username'> Welcome <%= currentUser.charAt(0).toUpperCase() + currentUser.substring(1) %> </p>
@@ -47,7 +46,7 @@
     console.log('running');
     $('img').each(function (index, image) {
       var $image = $(image);
-      var apiUrl = "https://api.pixplorer.co.uk/getimage/" + $image.data('title');
+      var apiUrl = "http://api.pixplorer.co.uk/getimage/" + $image.data('title');
 
 console.log(apiUrl);
 
