@@ -1,3 +1,4 @@
+<script src="scripts/image.js"></script>
 <link rel='stylesheet' href='/stylesheets/articlesindex.css'>
 
 <p id = 'username'> Welcome <%= currentUser.charAt(0).toUpperCase() + currentUser.substring(1) %> </p>
@@ -18,8 +19,14 @@
 <form class = "delete" action='/articles/<%=article._id%>?_method=DELETE', method = 'post'>
 <input type='submit' value='x'>
 </form>
+
 <h2 class = 'title'><%= article.title %> </h2>
+
 <p>by <%= article.author %></p>
+
+<img data-title="<%= article.title %>">
+
+
 <p class = 'category hideMe'> <%= article.category %></p>
 <p><%=article.content.slice(0,200)%><a href = '/articles/<%=article._id%>'>...</a> </p>
 </div>
@@ -28,3 +35,31 @@
 
 <script src='http://cdn.jsdelivr.net/jquery.mixitup/2.0.0/jquery.mixitup.min.js'></script>
 <script src="scripts/articlesindex.js"></script>
+
+<!--
+<script>
+ $(document).ready(function(){$('h1').text('poop')})
+ </script>
+  -->
+
+
+ <script>
+  $(function () {
+    console.log('running');
+    $('img').each(function (index, image) {
+      var $image = $(image);
+      var apiUrl = "http://api.pixplorer.co.uk/getimage/" + $image.data('title');
+
+console.log(apiUrl);
+
+      var updateImage = function (apiData) {
+        $image.attr('src', apiData.imglink);
+      };
+
+      $.ajax({
+        url: apiUrl,
+        success: updateImage
+      })
+    })
+  });
+</script>
