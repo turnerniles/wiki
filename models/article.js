@@ -8,9 +8,6 @@ var articleSchema = Schema({
   content: {type: String, required: true}
 });
 
-// var Section = mongoose.model("Section", sectionSchema);
 var Article = mongoose.model("Article", articleSchema);
 
-module.exports = {
-  Article: Article
-};
+module.exports = Article
