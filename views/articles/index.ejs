@@ -40,12 +40,12 @@
     console.log('running');
     $('img').each(function (index, image) {
       var $image = $(image);
-      var apiUrl = "//api.pixplorer.co.uk/getimage/" + $image.data('title');
+      var apiUrl = "http://api.pixplorer.co.uk/image?word=" + $image.data('title') + "&amount=1&size=1";
 
-console.log(apiUrl);
+// console.log(apiUrl);
 
       var updateImage = function (apiData) {
-        $image.attr('src', apiData.imglink);
+        $image.attr('src', apiData.images[0].imageurl);
       };
 
       $.ajax({

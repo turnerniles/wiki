@@ -1,6 +1,6 @@
 var express = require('express'),
     router = express.Router(),
-    Article = require('../models/article.js').Article;
+    Article = require('../models/article.js');
 // remember, every route has /articles before it in here...
 
 // INDEX

@@ -72,7 +72,8 @@ db.once('open', function() {
 
   server.listen(PORT, function() {
 
-  console.log("Database Running");
+console.log("1337");
+console.log("Database Running");
 
   });
 });
